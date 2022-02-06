@@ -12,7 +12,7 @@ Day.init(
             autoIncrement: true
         },
         // name of the day: Monday through Sunday
-        dayName: {
+        dayname: {
             type: DataTypes.STRING,
             allowNull: false,
         }

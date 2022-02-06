@@ -12,7 +12,7 @@ Event.init(
             autoIncrement: true
         },
         // name of the Event
-        eventName: {
+        eventname: {
             type: DataTypes.STRING,
             allowNull: false,
         }
