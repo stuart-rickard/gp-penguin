@@ -16,6 +16,8 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // we are going to need to keep track of the links we are sending; suggest using array of links in event model
+
     // code below is unfinished -- needs to be matched with similar code in User.js?
     organizer_id: {
       type: DataTypes.INTEGER,
