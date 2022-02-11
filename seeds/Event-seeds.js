@@ -31,3 +31,4 @@ const eventdata = [
 const eventSeeds = () => User.bulkCreate(eventdata, { individualHooks: true });
 
 module.exports = eventSeeds;
+
