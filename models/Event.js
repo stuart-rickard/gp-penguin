@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Event extends Model { }
 
@@ -14,7 +14,7 @@ Event.init(
         // name of the Event
         title: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         days: {
             type: DataTypes.STRING,
@@ -37,12 +37,17 @@ Event.init(
             }
         }
     },
+
+    // we are going to need to keep track of the links we are sending; suggest using array of links in event model
+
+
+
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'event'
+        modelName: "event",
     }
 );
 
