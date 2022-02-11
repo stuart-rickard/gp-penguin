@@ -2,6 +2,10 @@
 // https://github.com/sendgrid/sendgrid-nodejs
 
 const sgMail = require("@sendgrid/mail");
+require("dotenv").config();
+
+console.log(process.env.SENDGRID_API_KEY);
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // the code below sends a test email
@@ -12,6 +16,7 @@ const msg = {
   text: "Using Node.js",
   html: "<strong>HTML code as example</strong>",
 };
+
 sgMail
   .send(msg)
   .then(() => {

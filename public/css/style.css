@@ -162,11 +162,15 @@ body {
 margin-top:20px;
 text-align: center;
 display: inline;
+background-color: beige;
 }
 
-.button {
-    margin: 4px 10px;
+
+.panel-body {
+    
+    background:#000 url('file:///C:/Users/Brian/Desktop/gp-penguin/public/images/blue-snow.png');
 }
+
 
 
 .checkbox {
@@ -180,7 +184,7 @@ display: inline;
     margin: 4px 2px;
   }
   form {
-    background-color: black;
+    background:#000 url('file:///C:/Users/Brian/Desktop/gp-penguin/public/images/blue-snow.png');
     max-width: 500px;
     margin: 50px auto;
     padding: 30px 20px;
