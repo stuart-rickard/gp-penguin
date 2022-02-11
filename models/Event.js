@@ -3,6 +3,8 @@ const sequelize = require("../config/connection");
 
 class Event extends Model { }
 
+// checking
+
 Event.init(
     {
         id: {
