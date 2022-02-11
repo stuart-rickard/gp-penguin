@@ -1,2 +1,0 @@
-const { Day } = require('../models');
-

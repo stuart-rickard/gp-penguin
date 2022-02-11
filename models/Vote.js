@@ -17,11 +17,21 @@ Vote.init(
                 key: 'id'
             }
         },
-        DE_id: {
+        event_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'daysEvent',
+                model: 'event',
                 key: 'id'
+            }
+        },
+        days: {
+            type: DataTypes.STRING,
+            allownull: false,
+            get() {
+                return this.getDataValue('days').split(';')
+            },
+            set(val) {
+                this.setDataValue('days', val.join(';'));
             }
         }
     },

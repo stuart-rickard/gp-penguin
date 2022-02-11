@@ -20,9 +20,17 @@ User.init(
             allowNull: true,
             unique: true,
             validate: {
-                isEmail: true;
+                isEmail: true
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [4]
             }
         }
+
         // is organizer? (T/F)
     },
     {

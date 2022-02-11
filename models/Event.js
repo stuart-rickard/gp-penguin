@@ -12,9 +12,29 @@ Event.init(
             autoIncrement: true
         },
         // name of the Event
-        eventname: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        days: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            get() {
+                return this.getDataValue('days').split(';')
+            },
+            set(val) {
+                this.setDataValue('days', val.join(';'));
+            }
+        },
+        invite_emails: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            get() {
+                return this.getDataValue('invite_emails').split(';')
+            },
+            set(val) {
+                this.setDataValue('invite_emails', val.join(';'));
+            }
         }
     },
     {
