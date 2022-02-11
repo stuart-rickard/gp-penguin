@@ -12,21 +12,34 @@ Event.init(
       autoIncrement: true,
     },
     // name of the Event
-    eventname: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // we are going to need to keep track of the links we are sending; suggest using array of links in event model
-
-    // code below is unfinished -- needs to be matched with similar code in User.js?
-    organizer_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
+    days: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      get() {
+        return this.getDataValue("days").split(";");
+      },
+      set(val) {
+        this.setDataValue("days", val.join(";"));
+      },
+    },
+    invite_emails: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      get() {
+        return this.getDataValue("invite_emails").split(";");
+      },
+      set(val) {
+        this.setDataValue("invite_emails", val.join(";"));
       },
     },
   },
+
+  // we are going to need to keep track of the links we are sending; suggest using array of links in event model
+
   {
     sequelize,
     timestamps: false,

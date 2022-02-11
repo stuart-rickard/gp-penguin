@@ -23,8 +23,15 @@ User.init(
         isEmail: true,
       },
     },
-    // is organizer? (T/F)
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [4],
+      },
+    },
   },
+
   {
     sequelize,
     timestamps: false,
