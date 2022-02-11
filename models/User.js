@@ -5,6 +5,7 @@ class User extends Model { }
 
 User.init(
     {
+
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -24,6 +25,27 @@ User.init(
             },
         },
         // is organizer? (T/F)
+
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                isEmail: true,
+            },
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [4],
+            },
+        },
+
     },
     {
         sequelize,
