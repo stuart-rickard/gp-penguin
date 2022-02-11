@@ -156,3 +156,69 @@ h1{
 .delete-post{
     cursor: pointer;
 }
+
+/* vote page styles*/
+body {
+margin-top:20px;
+text-align: center;
+display: inline;
+}
+
+.button {
+    margin: 4px 10px;
+}
+
+
+.checkbox {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+  form {
+    background-color: black;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    overflow: hidden;
+    padding: 40px 10px;
+    background-image: url('file:///C:/Users/Brian/Desktop/gp-penguin/public/images/800px-Falkland_Islands_Penguins_40.jpg');
+    background-size: contain
+  }
+  
+  .header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+ 
+  .header a:hover {
+    color: white;
+  }
+  
+  
+  
+  .header-right {
+    float: right;
+  }
+  /*vote page*/
