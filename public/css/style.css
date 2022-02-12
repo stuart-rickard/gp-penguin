@@ -52,7 +52,7 @@ h1{
     position: relative;
     z-index: 1;
     min-height: calc(100vh - 118.39px);
-    background-color: #D4FFEF;
+    background-color: beige;
 }
 
 .post-list{
@@ -128,7 +128,7 @@ h1{
 /* login page styles */
 
 .form-container{
-    background-color: #F1F1F1;
+    background-color: black;
     font-size: 1.25rem;
     width: 35%;
     border-radius: 15px;
