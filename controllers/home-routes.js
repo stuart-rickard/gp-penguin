@@ -1,13 +1,36 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
-const { Post, User, Comment, Vote } = require("../models");
+const { Event, User, Vote } = require("../models");
 
-const callback = function () {
-  console.log("hello world");
-};
 
 router.get("/", (req, res) => {
-  callback();
+  Event.findAll({
+    where: {
+      user_id: 3
+    },
+    include: [
+        {
+          model: User,
+          attributes: ['username', 'id']
+        },
+        {
+            model: Vote,
+            attributes: ['id']
+        }
+    ]
+  })
+  .then(dbEventData => {
+    // serialize events to regular objects
+    const events = dbEventData.map(event => event.get({ plain: true }));
+
+    res.render('home', { 
+      events,
+      loggedIn: req.session.loggedIn
+    });
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 module.exports = router;

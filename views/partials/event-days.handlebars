@@ -1,0 +1,6 @@
+{{#each this.days as |eventDay|}}
+    <div class="mt-3">
+        <input type="checkbox" id="{{eventDay}}" value="{{eventDay}}">
+        <label for="{{eventDay}}" class="m-0 font-weight-bold">{{eventDay}}</label>
+    </div>
+{{/each}}
