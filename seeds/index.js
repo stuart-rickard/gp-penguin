@@ -1,6 +1,6 @@
-const userSeeds = require("./user-seeds");
-const voteSeeds = require("./event-seeds");
-const eventSeeds = require("./vote-seeds");
+const userSeeds = require("./User-seeds");
+const voteSeeds = require("./Vote-seeds");
+const eventSeeds = require("./Event-seeds");
 
 const sequelize = require("../config/connection");
 
