@@ -106,7 +106,6 @@ h1{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    border: 1px solid green;
 }
 
 .divider{
@@ -116,7 +115,7 @@ h1{
 .submit-btn{
     padding: .5rem .75rem;
     border-radius: 10px;
-    background-color: #64DFB1;
+    background-color: white;
     border: none;
     transition: background-color .75s;
 }
@@ -133,7 +132,6 @@ h1{
     width: 35%;
     border-radius: 15px;
     padding: 25px;
-    border: 2px solid green;
 }
 
 .form-container label{

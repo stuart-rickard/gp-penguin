@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Event</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -19,26 +19,43 @@
   </div>
 <body>
     <section class="p-5">
-            <div class="d-flex justify-content-between" 
-                <h2>CREATE A NEW EVENT</h2>
-                
-            </div>
-            <div class="mt-5">
+            
+            <div class="mt-5 form-container w-100 text-light">
                 <h3>Event Name</h3>
                 <input type="text" class="pb-1 pt-1" id="event-input" 
             </div> 
                 <div class="mt-5">
                 <h3>Choose Days</h3>
                 <div>
+                    <input type="checkbox" id="sunday" value="sunday">
+                    <label for="sunday" class="m-0 font-weight-bold">Sunday</label>
+
+                    <input type="checkbox" id="monday" value="monday">
+                    <label for="monday" class="m-0 font-weight-bold">Monday</label>
+
+                    <input type="checkbox" id="tuesday" value="tuesday">
+                    <label for="tuesday" class="m-0 font-weight-bold">Tuesday</label>
+
+                    <input type="checkbox" id="wednesday" value="wednesday">
+                    <label for="wednesday" class="m-0 font-weight-bold">Wednesday</label>
+
+                    <input type="checkbox" id="thursday" value="thursday">
+                    <label for="thursday" class="m-0 font-weight-bold">Thursday</label>
+
+                    <input type="checkbox" id="friday" value="friday">
+                    <label for="friday" class="m-0 font-weight-bold">Friday</label>
+
                     <input type="checkbox" id="saturday" value="saturday">
-                    <label for="saturday" class="m-0 font-weight-bold">saturday</label>
+                    <label for="saturday" class="m-0 font-weight-bold">Saturday</label>
                 </div>
             </div>
             <div class="mt-5">
                 <h3>Enter Invitee Emails</h3>
                 <input type="text" class="pb-1 pt-1 pl-2 pr-2" id="invitee-email">
             </div>
-
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="w-25 mt-3 submit-btn">Create Event</button>
+            </div>
     </section>
 
 
