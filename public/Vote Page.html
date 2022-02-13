@@ -17,83 +17,35 @@
   </div>
 <body>
     
-        <div class="panel panel-primary">
+        <section class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">
-                    Which days work for you?</h3>
+                <h2 class="panel-title">
+                    Which days work for you?
+                </h2>
             </div>
-            <form id="vote-form">
-            <div class="panel-body">
-                <div class="row">
-                    
-                        
-                            <div class="checkbox w-100">
-                                <label>
-                                    <button type="button" class="btn btn-dark">Sunday</button>
-                                    <input type="checkbox" id="day" value="Sunday">
+            <form id="vote-form" class="p-5 vote-form">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="checkbox w-100">
+                                <input type="checkbox" id="Sunday" value="Sunday">
+                                <label for="Sunday" class="btn btn-dark">
+                                    Sunday
                                 </label>
-            
-
-                                <label>
-                                    <button type="button" class="btn btn-dark">Monday</button>
-                                    <input type="checkbox" id="day" value="Monday">
-                                </label>
-                                
-                            
-                        
-                    
-                    
-                        
-                             <label>
-                                    <button type="button" class="btn btn-dark">Tuesday</button>
-                                    <input type="checkbox" id="day" value="Tuesday">
-                                </label>
-                               
-
-
-                            
-                        
-               
-                
-                    
-                        
-                            
-                                <label>
-                                    <button type="button" class="btn btn-dark">Wednesday</button>
-                                    <input type="checkbox" id="day" value="Wednesday">
-                                   
-                                </label>
-                               
-                            
-                        
-                   
-                   
-                        
-                            
-                                <label>
-                                    <button type="button" class="btn btn-dark">Thursday</button>
-                                    <input type="checkbox" id="day" value="Thursday">
-                                   
-                                </label>
-                               
-
-                                <label>
-                                    <button type="button" class="btn btn-dark">Friday</button>
-                                    <input type="checkbox" id="day" value="Friday">
-                                    
-                                </label>
-    
-                                
-                                
                         </div>
-                        <button type="vote" class="w-100" value="vote">
+                        <button type="submit" class="w-100 p-3 font-weight-bold">
                             Cast Vote
                         </button>
-                
-            </div>
-           
-        </div>
-    </div>
+                    </div>
+                </div>
+           </form>
+           <div>
+               <h2>Current Tally</h2>
+               <div class="mt-4">
+                    <p class="larger-font font-weight-bold">Sunday: 0 Votes</p>
+               </div>
+           </div>
+        </section>
+    
 </div>
 </div>
     

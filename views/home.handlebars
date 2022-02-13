@@ -12,17 +12,42 @@
             </div> 
                 <div class="mt-5">
                 <h3>Choose Days</h3>
-                {{#each events as |event|}}
-                    {{> event-days event }}
-                {{/each}}
+                <div class="mt-3">
+                    <input type="checkbox" id="Monday" value="Monday">
+                    <label for="Monday" class="m-0 font-weight-bold">Monday</label>
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="Tuesday" value="Tuesday">
+                    <label for="Tuesday" class="m-0 font-weight-bold">Tuesday</label>
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="Wednesday" value="Wednesday">
+                    <label for="Wednesday" class="m-0 font-weight-bold">Wednesday</label>
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="Thursday" value="Thursday">
+                    <label for="Thursday" class="m-0 font-weight-bold">Thursday</label>
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="Friday" value="Friday">
+                    <label for="Friday" class="m-0 font-weight-bold">Friday</label>
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="Saturday" value="Saturday">
+                    <label for="Saturday" class="m-0 font-weight-bold">Saturday</label>
+                </div>
+                <div class="mt-3">
+                    <input type="checkbox" id="Sunday" value="Sunday">
+                    <label for="Sunday" class="m-0 font-weight-bold">Sunday</label>
+                </div>
             </div>
             <div class="mt-5">
                 <h3>Enter Invitee Emails</h3>
-                <p>Enter the emails of the people you would like to participate in the vote,<br>emails must be separated by a single space.</p>
+                <p>Enter the emails of the people you would like to participate in the vote.<br>Emails must be separated by a single space.</p>
                 <input type="text" class="pb-1 pt-1 pl-2 pr-2" id="invitee-email">
             </div>
             <div class="mt-3">
-                <button type="submit" class="pl-3 pr-3 pt-2 pb-2 mb-4">Create Event</button>
+                <button type="submit" class="larger-font submit-btn pl-3 pr-3 pt-2 pb-2 mb-4">Create Event</button>
             </div>
         </form>
 
@@ -33,7 +58,7 @@
             </div>
 
             {{#each events as |event|}}
-            <a href="">
+            <a href="/vote/{{event.id}}">
                 <article class="d-flex justify-content-center flex-wrap p-3 event-item align-items-center w-100 mb-4">
                     <div class="text-primary w-100">
                         <h3 class="m-0">{{event.title}}</h3>
