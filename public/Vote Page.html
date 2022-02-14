@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Vote</title>
+</head>
+<div class="header" id="header-background">
+    <a href="homepage" class="logo">Penguin Planner</a>
+    <div class="header-right">
+      <a href="login">Login</a>
+      <a href="logout">Logout</a>
+    </div>
+  </div>
+<body>
+    
+        <section class="panel panel-primary">
+            <div class="text-right">
+                <a href="/" class="submit-btn p-3 larger-font mr-4">Create New Event</a>
+            </div>
+            <div class="panel-heading mt-5">
+                <h2 class="panel-title">
+                    Which days work for you?
+                </h2>
+            </div>
+            <form id="vote-form" class="p-5 vote-form">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="checkbox w-100">
+                                <input type="checkbox" id="Sunday" value="Sunday">
+                                <label for="Sunday" class="btn btn-dark">
+                                    Sunday
+                                </label>
+                        </div>
+                        <button type="submit" class="w-100 p-3 font-weight-bold">
+                            Cast Vote
+                        </button>
+                    </div>
+                </div>
+           </form>
+           <div>
+               <h2>Current Tally</h2>
+               <div class="mt-4">
+                    <p class="larger-font font-weight-bold">Sunday: 0 Votes</p>
+               </div>
+           </div>
+        </section>
+    
+</div>
+</div>
+    
+</body>
+
+</form>
+
+
+</html>
