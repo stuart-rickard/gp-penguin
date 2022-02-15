@@ -1,37 +1,54 @@
 async function newEventFormHandler(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const title = document.querySelector("#event-input").value.trim();
-  console.log("title is: " + title);
-  // days is hard coded - Chance to update - note this could cause an issue if the day is not a valid choice
-  const days = ["Wednesday"];
-  console.log("days is: " + days);
-  const inviteEmailsAsString = document
-    .querySelector("#invitee-email")
-    .value.trim();
-  console.log("inviteEmailsAsString is: " + inviteEmailsAsString);
-  const inviteEmailsAsArray = inviteEmailsAsString.split(" ");
-  console.log("inviteEmailsAsArray is: " + inviteEmailsAsArray);
+    const title = document.querySelector("#event-input").value.trim();
+    
+    let days = [];
+    let allCheckboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+    console.log(allCheckboxes);
 
-  if (title && days && inviteEmailsAsArray) {
-    const response = await fetch("/api/events", {
-      method: "post",
-      body: JSON.stringify({
-        // TODO we need to capture the user id so that the event is associated with the correct id
-        user_id: 1,
-        title: title,
-        days: days,
-        invite_emails: inviteEmailsAsArray,
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
-    // TODO we need the response to give us the id of the event so that we can go to the right vote page
-    if (response.ok) {
-      document.location.replace(`/vote/1`);
-    } else {
-      alert(response.statusText);
+    const inviteEmailsAsString = document
+      .querySelector("#invitee-email")
+      .value.trim();
+
+    let inviteEmailsAsArray = [];
+
+    // the split function would put an empty string at index 0
+    // if nothing was entered into the box by the user. This ensures
+    // we only split the string whenever the string has a value.
+    if(inviteEmailsAsString){
+      inviteEmailsAsArray = inviteEmailsAsString.split(" ");
     }
-  }
+
+    for(let i = 0; i < allCheckboxes.length; i++){
+      if(allCheckboxes[i].checked){
+        days.push(allCheckboxes[i].value)
+      }
+    }
+
+    console.log(days);
+
+    if (title && days.length > 0 && inviteEmailsAsArray.length > 0) {
+      const response = await fetch("/api/events", {
+        method: "post",
+        body: JSON.stringify({
+          title: title,
+          days: days,
+          invite_emails: inviteEmailsAsArray
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      // TODO we need the response to give us the id of the event so that we can go to the right vote page
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert(response.statusText);
+      }
+    }
+    else{
+      alert('Not enough information. Please fill out the entire form before submitting.');
+      return;
+    }
 }
 
 document
