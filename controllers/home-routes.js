@@ -4,8 +4,10 @@ const withAuth = require("../utils/auth");
 
 // send to event creation page, or if not authorized user,
 // send to the login page.
-router.get("/", (req, res) => {
-  res.render("login", {
+router.get("/", withAuth, (req, res) => {
+  console.log(req.session);
+  console.log("======================");
+  res.render("event-entry", {
     loggedIn: req.session.loggedIn,
   });
 });
