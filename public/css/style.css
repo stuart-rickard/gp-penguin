@@ -2,11 +2,17 @@
     box-sizing: border-box;
 }
 
-header{
+.header-top{
     -webkit-box-shadow: 0px 2px 15px 5px rgba(0,0,0,0.67); 
     box-shadow: 0px 2px 15px 5px rgba(0,0,0,0.67);
     position: relative;
     z-index: 3;
+    background-size: contain;
+    background-image: url("../images/800px-Falkland_Islands_Penguins_40.jpg");
+}
+
+.header-title{
+    text-shadow: 1px 1px 20px black;
 }
 
 a{
@@ -185,7 +191,7 @@ background-color: beige;
     margin: 4px 2px;
   }
 #vote-form {
-    background:#000 url('file:///C:/Users/Brian/Desktop/gp-penguin/public/images/blue-snow.png');
+    background-color:  white;
     max-width: 500px;
     margin: 50px auto;
     padding: 30px 20px;
