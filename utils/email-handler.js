@@ -34,7 +34,7 @@ const sendInviteEmails = function (
   let port;
 
   if (process.env.JAWSDB_URL) {
-    port = "https://penguin-planner.herokuapp.com/";
+    port = "https://penguin-planner.herokuapp.com";
   } else {
     port = "http://localhost:3001";
   }
