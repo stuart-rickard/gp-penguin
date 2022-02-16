@@ -1,0 +1,41 @@
+<section class="p-4">
+    <div class="text-right mt-4">
+        <a href="/" class="submit-btn p-3 larger-font">Create New Event</a>
+    </div>
+    <div class="panel-heading mt-5">
+        <h2 class="panel-title">
+            Which days work for you?
+        </h2>
+    </div>
+
+    <form id="vote-form" class="p-5 vote-form">
+        <div class="panel-body">
+            {{#each event.days as |eventDay|}}
+                <div class="row">
+                    <div class="checkbox w-100">
+                            <input type="checkbox" id="{{eventDay}}" value="{{eventDay}}">
+                            <label for="{{eventDay}}" class="btn btn-dark">
+                                {{eventDay}}
+                            </label>
+                    </div>
+                </div>
+            {{/each}}
+            <button type="submit" class="w-100 p-3 font-weight-bold">
+                Cast Vote
+            </button>
+        </div>
+    </form>
+
+    <div>
+        <h2>Current Tally</h2>
+        <div class="mt-4">
+            {{#each event.days as |eventDay|}}
+            {{!-- ../event.votes to reference the 
+            parent scope from within this each element --}}
+                <p class="larger-font font-weight-bold">{{eventDay}}: {{get_day_votes eventDay ../event.votes}} {{pluralize eventDay ../event.votes}}</p>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<script src="/js/new-vote.js"></script>

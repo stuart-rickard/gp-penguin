@@ -51,8 +51,10 @@ h1{
 .main-content{
     position: relative;
     z-index: 1;
+
     min-height: calc(100vh - 118.39px);
     background-color: beige;
+
 }
 
 .post-list{
@@ -113,14 +115,18 @@ h1{
 }
 
 .submit-btn{
+    color: white;
     padding: .5rem .75rem;
     border-radius: 10px;
+
     background-color: white;
+
     border: none;
-    transition: background-color .75s;
+    transition: background-color .5s, color .75s;
 }
 
 .submit-btn:hover{
+    color: black;
     background-color: aqua;
 }
 
@@ -164,12 +170,12 @@ background-color: beige;
 }
 
 
-.panel-body {
-    
-    background:#000 url('file:///C:/Users/Brian/Desktop/gp-penguin/public/images/blue-snow.png');
-}
-
-
+/* .panel-body {
+    height: 500px;
+    width: 800px;
+    background-size: cover;
+    background-image: url('../images/800px-Falkland_Islands_Penguins_40.jpg');
+} */
 
 .checkbox {
     border: none;
@@ -181,11 +187,12 @@ background-color: beige;
     font-size: 16px;
     margin: 4px 2px;
   }
-  form {
+#vote-form {
     background:#000 url('file:///C:/Users/Brian/Desktop/gp-penguin/public/images/blue-snow.png');
     max-width: 500px;
     margin: 50px auto;
     padding: 30px 20px;
+    border-radius: 20px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -224,3 +231,10 @@ background-color: beige;
     float: right;
   }
   /*vote page*/
+
+/* create event page */
+.event-item{
+    background-color: #F1F1F1;
+    border: 2px solid black;
+    border-radius: 15px;
+}
