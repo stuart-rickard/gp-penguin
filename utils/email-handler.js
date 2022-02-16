@@ -31,14 +31,12 @@ const sendInviteEmails = function (
   eventTitle,
   newEventID
 ) {
-  
   let port;
 
-  if(process.env.JAWSDB_URL){
-    port = 'heroku';
-  }
-  else{
-    port = 'http://localhost:3001';
+  if (process.env.JAWSDB_URL) {
+    port = "https://safe-journey-73439.herokuapp.com";
+  } else {
+    port = "http://localhost:3001";
   }
 
   if (emailAddressesArray.length) {
