@@ -59,8 +59,6 @@ router.post("/", (req, res) => {
   console.log("\n in post route \n");
   let newEventID = "";
   const title = req.body.title;
-  // user_id: req.session.user_id,
-  const userID = 1;
   // arrays
   const days = req.body.days;
   const inviteEmails = req.body.invite_emails;
@@ -68,7 +66,7 @@ router.post("/", (req, res) => {
   Event.create({
     title: title,
     // user_id: req.session.user_id,
-    user_id: userID,
+    user_id: req.session.user_id,
     // arrays
     days: days,
     invite_emails: inviteEmails,

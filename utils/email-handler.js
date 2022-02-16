@@ -31,13 +31,23 @@ const sendInviteEmails = function (
   eventTitle,
   newEventID
 ) {
+  
+  let port;
+
+  if(process.env.JAWSDB_URL){
+    port = 'heroku';
+  }
+  else{
+    port = 'http://localhost:3001';
+  }
+
   if (emailAddressesArray.length) {
     for (let i = 0; i < emailAddressesArray.length; i++) {
       const msg = {
         to: emailAddressesArray[i],
         from: "gp-penguin-email@bau-dev.com",
         subject: eventTitle,
-        text: `You've been invited to an event.  Please click this link to let us know your availability.  http://localhost:3001/vote/${newEventID}`,
+        text: `You've been invited to an event.  Please click this link to let us know your availability.  ${port}/vote/${newEventID}`,
       };
       sgMail
         .send(msg)
