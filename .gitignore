@@ -3,7 +3,6 @@
 .lh/
 git_ignored.js
 for-tests.js
-.env
 .gitignore
 npm-debug.log
 .DS_Store
