@@ -4,10 +4,10 @@ const withAuth = require('../utils/auth');
 
 // send to event creation page, or if not authorized user,
 // send to the login page.
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Event.findAll({
     where: {
-      user_id: 3
+      user_id: req.session.user_id
     },
     include: [
         {

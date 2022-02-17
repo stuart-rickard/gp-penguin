@@ -9,7 +9,7 @@ async function loginFormHandler(event) {
       method: "post",
       body: JSON.stringify({
         email,
-        password,
+        password
       }),
       headers: { "Content-Type": "application/json" },
     });
@@ -29,13 +29,18 @@ async function signupFormHandler(event) {
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
+  if(password.length < 4){
+    alert('Password must be at least 4 characters!');
+    return;
+  }
+  
   if (username && email && password) {
     const response = await fetch("/api/users", {
       method: "post",
       body: JSON.stringify({
         username,
         email,
-        password,
+        password
       }),
       headers: { "Content-Type": "application/json" },
     });
