@@ -1,74 +1,79 @@
 <section class="p-5">
-    <div class="d-flex justify-content-between">
-        <h2>Create A New Event</h2>
-        <button class="font-weight-bold pl-3 pr-3">Logout</button>
+  <div class="d-flex justify-content-between flex-wrap">
+    <h2>Create A New Event</h2>
+    <button id="logout-btn" class="font-weight-bold pl-3 pr-3">Logout</button>
+  </div>
+
+  <div class="d-flex justify-content-center">
+      <img class="w-35" src="./images/penguin-group.jpeg" alt="group of penguins">
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center">
+    <form id="event-form" class="w-100">
+      <div class="mt-5">
+        <h3>Event Name</h3>
+        <input type="text" class="pb-1 pt-1" id="event-input" />
+      </div>
+      <div class="mt-5 checkbox-container">
+        <h3>Enter options for Invitees</h3>
+        <div class="mt-3">
+          <label for="option1">Option1:</label><br>
+  <input type="text" id="option1" name="option1"><br>
+          <label for="option2">Option2:</label><br>
+  <input type="text" id="option2" name="option2"><br>
+          <label for="option3">Option3:</label><br>
+  <input type="text" id="option3" name="option3"><br>
+          <label for="option4">Option4:</label><br>
+  <input type="text" id="option4" name="option4"><br>
+          <label for="option5">Option5:</label><br>
+  <input type="text" id="option5" name="option5"><br>
+          <label for="option6">Option6:</label><br>
+  <input type="text" id="option6" name="option6"><br>
+          <label for="option7">Option7:</label><br>
+  <input type="text" id="option7" name="option7"><br>
+      </div>
+      <div class="mt-5">
+        <h3>Enter Invitee Emails</h3>
+        <p>Enter the emails of the people you would like to participate in the
+          vote.<br />Emails must be separated by a single space.</p>
+        <input type="text" class="pb-1 pt-1 pl-2 pr-2" id="invitee-email" />
+      </div>
+      <div class="mt-3">
+        <button
+          type="submit"
+          class="larger-font submit-btn pl-3 pr-3 pt-2 pb-2 mb-4"
+        >Create Event</button>
+      </div>
+    </form>
+
+    <div class="w-100 d-flex justify-content-center mt-3 mb-3">
+        <img class="happy-penguin" src="./images/happy-penguin.jfif" alt="happy penguin">
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center">
-        <form id="event-form" class="w-100">
-            <div class="mt-5">
-                <h3>Event Name</h3>
-                <input type="text" class="pb-1 pt-1" id="event-input">
-            </div> 
-                <div class="mt-5">
-                <h3>Choose Days</h3>
-                <div class="mt-3">
-                    <input type="checkbox" id="Monday" value="Monday">
-                    <label for="Monday" class="m-0 font-weight-bold">Monday</label>
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="Tuesday" value="Tuesday">
-                    <label for="Tuesday" class="m-0 font-weight-bold">Tuesday</label>
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="Wednesday" value="Wednesday">
-                    <label for="Wednesday" class="m-0 font-weight-bold">Wednesday</label>
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="Thursday" value="Thursday">
-                    <label for="Thursday" class="m-0 font-weight-bold">Thursday</label>
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="Friday" value="Friday">
-                    <label for="Friday" class="m-0 font-weight-bold">Friday</label>
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="Saturday" value="Saturday">
-                    <label for="Saturday" class="m-0 font-weight-bold">Saturday</label>
-                </div>
-                <div class="mt-3">
-                    <input type="checkbox" id="Sunday" value="Sunday">
-                    <label for="Sunday" class="m-0 font-weight-bold">Sunday</label>
-                </div>
-            </div>
-            <div class="mt-5">
-                <h3>Enter Invitee Emails</h3>
-                <p>Enter the emails of the people you would like to participate in the vote.<br>Emails must be separated by a single space.</p>
-                <input type="text" class="pb-1 pt-1 pl-2 pr-2" id="invitee-email">
+    <div class="active-events-container">
+      <div class="mt-4">
+        <h2><u>Active Events</u></h2>
+        <p class="mb-4">Click an active event to see the current tally.</p>
+      </div>
+
+      {{#each events as |event|}}
+        <a href="/vote/{{event.id}}">
+          <article
+            class="d-flex justify-content-center flex-wrap p-3 event-item align-items-center w-100 mb-4"
+          >
+            <div class="text-primary w-100">
+              <h3 class="m-0">{{event.title}}</h3>
             </div>
             <div class="mt-3">
-                <button type="submit" class="larger-font submit-btn pl-3 pr-3 pt-2 pb-2 mb-4">Create Event</button>
+              <p class="m-0 font-weight-bold">Current Votes:
+                {{event.votes.length}}</p>
             </div>
-        </form>
-
-        <div class="active-events-container">
-            <div class="mt-4">
-                <h2><u>Active Events</u></h2>
-                <p class="mb-4">Click an active event to see the current tally.</p>
-            </div>
-
-            {{#each events as |event|}}
-            <a href="/vote/{{event.id}}">
-                <article class="d-flex justify-content-center flex-wrap p-3 event-item align-items-center w-100 mb-4">
-                    <div class="text-primary w-100">
-                        <h3 class="m-0">{{event.title}}</h3>
-                    </div>
-                    <div class="mt-3">
-                        <p class="m-0 font-weight-bold">Current Votes: {{event.votes.length}}</p>
-                    </div>
-                </article>
-            </a>
-            {{/each}}   
-        </div>
+          </article>
+        </a>
+      {{/each}}
     </div>
+  </div>
 </section>
+
+<script src="/js/new-event.js"></script>
+<script src="/js/logout.js"></script>

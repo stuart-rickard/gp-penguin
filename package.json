@@ -27,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/stuart-rickard/gp-penguin/issues"
   },
-  "homepage": "https://github.com/stuart-rickard/gp-penguin#readme"
+  "homepage": "https://github.com/stuart-rickard/gp-penguin#readme",
+  "devDependencies": {}
 }
