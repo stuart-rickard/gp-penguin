@@ -72,11 +72,11 @@ npm start
 
 ## Screenshot
 
-![a screenshot of the app](./assets/penguin-planner.png)
+![penguin planner](./public/images/penguin-planner.PNG)
 
-## Video Walkthrough
+## Deployed Demo
 
-[Video Walthrough]()
+https://penguin-planner.herokuapp.com/
 
 ## Built With
 
